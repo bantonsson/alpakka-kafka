@@ -55,7 +55,7 @@ object ReactiveKafkaTransactionBenchmarks extends LazyLogging {
         case other: Results[Key, Val, PassThrough] =>
           promise.complete(Success(()))
       })(Keep.left)
-      .instrumented(name = "sixth", traceable = true)
+      //.instrumented(name = "sixth", traceable = true)
       .run()
 
     Await.result(promise.future, streamingTimeout)

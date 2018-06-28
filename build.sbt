@@ -178,8 +178,8 @@ lazy val benchmarks = project
       "com.typesafe.akka" %% "akka-slf4j" % akkaVersion,
       "com.typesafe.akka" %% "akka-stream" % akkaVersion,
       Cinnamon.library.cinnamonAkkaStream,
-      Cinnamon.library.cinnamonPrometheusHttpServer,
-      Cinnamon.library.cinnamonOpenTracingZipkin
+      //Cinnamon.library.cinnamonOpenTracingZipkin,
+      Cinnamon.library.cinnamonPrometheusHttpServer
     ),
     dockerfile in docker := {
       val artifact: File = assembly.value
