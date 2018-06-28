@@ -14,7 +14,7 @@ import scala.language.postfixOps
 
 class BenchmarksSpec extends TestKit(ActorSystem("AkkaKafkaBenchmarks")) with FlatSpecLike with BeforeAndAfterAll {
 
-  val kafkaHost = "localhost:9092"
+  val kafkaHost = "localhost:9094"
 
   implicit val mat = ActorMaterializer()
 
@@ -23,9 +23,10 @@ class BenchmarksSpec extends TestKit(ActorSystem("AkkaKafkaBenchmarks")) with Fl
     //Benchmarks.run(RunTestCommand("akka-plain-consumer", kafkaHost, 2000000))
     //Benchmarks.run(RunTestCommand("batched-consumer", kafkaHost, 20000))
     //Benchmarks.run(RunTestCommand("akka-batched-consumer", kafkaHost, 20000))
-    //Benchmarks.run(RunTestCommand("at-most-once-consumer", kafkaHost, 50000))
-    Benchmarks.run(RunTestCommand("transactions", kafkaHost, 100000))
-    Benchmarks.run(RunTestCommand("akka-transactions", kafkaHost, 100000))
+    //Benchmarks.run(RunTestCommand("at-most-once-consumer", kafkaHost, 500))
+    Benchmarks.run(RunTestCommand("akka-at-most-once-consumer", kafkaHost, 750))
+    //Benchmarks.run(RunTestCommand("transactions", kafkaHost, 100000))
+    //Benchmarks.run(RunTestCommand("akka-transactions", kafkaHost, 100000))
   }
 
   override protected def afterAll(): Unit = {

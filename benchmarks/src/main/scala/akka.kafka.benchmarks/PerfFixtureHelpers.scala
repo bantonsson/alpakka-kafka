@@ -16,7 +16,7 @@ import scala.language.postfixOps
 private[benchmarks] trait PerfFixtureHelpers extends LazyLogging {
 
   val producerTimeout = 6 minutes
-  val logPercentStep = 1
+  val logPercentStep = 10
 
   def randomId() = UUID.randomUUID().toString
 
